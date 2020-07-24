@@ -8,7 +8,7 @@ This is an example project I created using RabbitMQ and Node.js
 Go to the project directory
 
 ```
-  yarn instatll
+  yarn install
   # use -d to run docker on detached mode
   docker-compose --file docker/docker-compose.yaml up
   yarn start
