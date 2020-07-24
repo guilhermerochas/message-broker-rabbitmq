@@ -1,0 +1,12 @@
+version: "3"
+services:
+  rabbitmq:
+    image: "rabbitmq"
+    container_name: "message-broker"
+    hostname: "my-user"
+    environment:
+      RABBITMQ_ERLANG_COOKIE: "secret cookie"
+    volumes:
+      - ../volumes/rabbitmq:/var/lib/rabbitmq
+    ports:
+      - 5672:5672
