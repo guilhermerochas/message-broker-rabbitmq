@@ -21,11 +21,7 @@ broker = () =>
         durable: false,
       });
 
-      console.log("mensagens enviada");
-
-      for (var item = 0; item <= 5; item++) {
-        channel.sendToQueue(queue, Buffer.from(msg));
-      }
+      channel.sendToQueue(queue, Buffer.from(msg));
 
       consumer(channel, queue);
     });

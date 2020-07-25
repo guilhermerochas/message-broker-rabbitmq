@@ -1,11 +1,14 @@
 const Express = require("express");
 const routes = require("./routes");
-const rabbitmq = require("./rabbitmq/producer");
+const producer = require("./rabbitmq/producer");
 
 const app = Express();
 
-app.use(routes);
+app.use((req, res, next) => {
+  req.producer = producer;
+  next();
+});
 
-rabbitmq();
+app.use(routes);
 
 module.exports = app;

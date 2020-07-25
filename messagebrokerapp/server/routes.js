@@ -1,6 +1,8 @@
 const routes = require("express").Router();
 
-routes.get("/", (req, res) => {
+routes.post("/send", (req, res) => {
+  const producer = req.producer;
+  producer();
   res.send({ ok: "true" });
 });
 
